@@ -2,12 +2,10 @@ import React, {useState} from 'react'
 import Iframe from 'react-iframe'
 
 function Map(props){
-    const [lon, setlon] = useState(40);
-    const API_KEY = 'AIzaSyBc92szqMLFo04IVyZxMwbA9ewjwO0NMmk';
     return (
         <div>
-            <Iframe className="map" url={`https://www.google.com/maps/embed/v1/place?key=${API_KEY}&q=Eiffel+Tower,Paris+France`}>
-            </Iframe>
+            <Iframe className="map" url={`https://maps.google.com/maps?q=${props.value.city}&t=&z=13&ie=UTF8&iwloc=&output=embed`} ></Iframe> 
+            <img className="position" src="../../../images/icon-location.svg" alt="icon"></img>
         </div>
     )                                                                                                          
 }

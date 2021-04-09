@@ -107,3 +107,11 @@
   margin: 0;
   font-weight: bold;
 }
+
+.position{
+  position: absolute;
+  width: 30px;
+  height: auto;
+  top: 68.5vh;
+  text-align: center;
+}

@@ -4,7 +4,7 @@ import Header from './components/header/Header'
 import Map from './components/map/Map'
 
 function App() {
-  const [info, setInfo] = useState({lat: '40.8123', lon: '-73.9682'});
+  const [info, setInfo] = useState({city: 'Kiev'});
     function onLoadHandler(data){
         setInfo({
             ip:data.query,
@@ -13,8 +13,12 @@ function App() {
             isp: data.isp,
             lat: data.lat,
             lon: data.lon,
+            city: makeCity(data.city),
         })
     }
+  function makeCity(city){
+    return city.split(' ').join('_');
+  }
   return (
     <div className="App">
       <Header value={{onLoadHandler, info}}/>
